@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package penalty;
+
+service PenaltyService {
+  rpc CalculatePenalty (PenaltyRequest) returns (PenaltyResponse);
+}
+
+message PenaltyRequest {
+  int32 daysLate = 1;
+}
+
+message PenaltyResponse {
+  double penalty = 1;
+} 

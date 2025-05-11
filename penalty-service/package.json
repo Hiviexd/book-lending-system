@@ -1,0 +1,17 @@
+{
+    "name": "penalty-service",
+    "version": "1.0.0",
+    "main": "src/grpc/server.js",
+    "scripts": {
+        "start": "node src/grpc/server.js",
+        "dev": "nodemon src/grpc/server.js"
+    },
+    "dependencies": {
+        "@grpc/grpc-js": "^1.8.14",
+        "@grpc/proto-loader": "^0.7.7",
+        "dotenv": "^16.3.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    }
+}
