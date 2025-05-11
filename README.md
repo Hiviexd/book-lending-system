@@ -2,6 +2,18 @@
 
 A microservices-based backend system for managing users, books, loans, and late return penalties. Demonstrates REST, GraphQL, gRPC, and Kafka. No frontend — testable via Postman.
 
+## Technologies used
+
+<p align="left">
+  <img src="https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white" />
+  <img src="https://img.shields.io/badge/Apache Kafka-231F20?logo=apachekafka&logoColor=white" />
+  <img src="https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=white" />
+  <img src="https://img.shields.io/badge/gRPC-5C7AEA?logo=grpc&logoColor=white" />
+  <img src="https://img.shields.io/badge/REST-000000?logo=rest&logoColor=white" />
+</p>
+
 ## Architecture
 
 - **user-service**: User registration and management (REST)
@@ -32,12 +44,14 @@ docker-compose up --build
 4. **Test with Postman** (collection provided in `/api/`)
 
 ## Services
-- Each service has its own README for details, endpoints, and setup.
+Each service has its own README for details, endpoints, and setup.
+
+- [user-service](./user-service/README.md)
+- [book-service](./book-service/README.md)
+- [loan-service](./loan-service/README.md)
+- [penalty-service](./penalty-service/README.md)
+- [graphql-gateway](./graphql-gateway/README.md)
 
 ## Testing
 - Use the provided Postman collection to test all endpoints and flows.
 - For testing Kafka events, run Kafdrop via `docker run -d -p 9000:9000 -e KAFKA_BROKER_CONNECT=kafka:9092 --network=book-lending-system_default obsidiandynamics/kafdrop` and access at `http://localhost:9000`; events will appear in the `loan-events` topic.
-
----
-
-**Tech:** Node.js, Express, MongoDB, Kafka, gRPC, GraphQL
