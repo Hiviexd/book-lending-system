@@ -16,6 +16,7 @@ A microservices-based backend system for managing users, books, loans, and late 
 
 ## Architecture
 
+- **api-gateway**: Root gateway service - unified entry point for all operations (Port 5000)
 - **user-service**: User registration and management (REST)
 - **book-service**: Book catalog and availability (REST)
 - **loan-service**: Borrow/return books, emits loan events (REST, Kafka, gRPC client)
@@ -25,10 +26,10 @@ A microservices-based backend system for managing users, books, loans, and late 
 - **MongoDB Atlas**: Database for all services
 
 ```
-[Postman] <-> [GraphQL Gateway] <-> [user/book/loan services] <-> [MongoDB]
-                                 |
-                                 +--> [penalty-service (gRPC)]
-                                 +--> [Kafka (loan events)]
+[Postman] <-> [API Gateway:5000] <-> [user/book/loan services] <-> [MongoDB]
+                |                        |
+                +-> [GraphQL Gateway]    +--> [penalty-service (gRPC)]
+                                         +--> [Kafka (loan events)]
 ```
 
 ## Getting Started
@@ -42,10 +43,14 @@ docker-compose up --build
 ```
 
 4. **Test with Postman** (collection provided in `/api/`)
+   - All requests should go through the API Gateway at `http://localhost:5000`
+   - Use `/api/users/*`, `/api/books/*`, `/api/loans/*` for REST endpoints
+   - Use `/api/graphql` for GraphQL queries
 
 ## Services
 Each service has its own README for details, endpoints, and setup.
 
+- [api-gateway](./api-gateway/README.md) - **Start here!** Single entry point for all operations
 - [user-service](./user-service/README.md)
 - [book-service](./book-service/README.md)
 - [loan-service](./loan-service/README.md)

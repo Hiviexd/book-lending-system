@@ -19,11 +19,11 @@
                             "raw": "{\n  \"username\": \"alice\",\n  \"email\": \"alice@example.com\",\n  \"password\": \"password123\"\n}"
                         },
                         "url": {
-                            "raw": "http://localhost:3001/register",
+                            "raw": "http://localhost:5000/api/users/register",
                             "protocol": "http",
                             "host": ["localhost"],
-                            "port": "3001",
-                            "path": ["register"]
+                            "port": "5000",
+                            "path": ["api", "users", "register"]
                         }
                     }
                 },
@@ -37,11 +37,11 @@
                             "raw": "{\n  \"email\": \"alice@example.com\",\n  \"password\": \"password123\"\n}"
                         },
                         "url": {
-                            "raw": "http://localhost:3001/login",
+                            "raw": "http://localhost:5000/api/users/login",
                             "protocol": "http",
                             "host": ["localhost"],
-                            "port": "3001",
-                            "path": ["login"]
+                            "port": "5000",
+                            "path": ["api", "users", "login"]
                         }
                     }
                 },
@@ -51,11 +51,11 @@
                         "method": "GET",
                         "header": [{ "key": "Authorization", "value": "Bearer {{user_jwt}}" }],
                         "url": {
-                            "raw": "http://localhost:3001/profile",
+                            "raw": "http://localhost:5000/api/users/profile",
                             "protocol": "http",
                             "host": ["localhost"],
-                            "port": "3001",
-                            "path": ["profile"]
+                            "port": "5000",
+                            "path": ["api", "users", "profile"]
                         }
                     }
                 },
@@ -72,11 +72,11 @@
                             "raw": "{\n  \"username\": \"alice2\"\n}"
                         },
                         "url": {
-                            "raw": "http://localhost:3001/profile",
+                            "raw": "http://localhost:5000/api/users/profile",
                             "protocol": "http",
                             "host": ["localhost"],
-                            "port": "3001",
-                            "path": ["profile"]
+                            "port": "5000",
+                            "path": ["api", "users", "profile"]
                         }
                     }
                 }
@@ -95,11 +95,11 @@
                             "raw": "{\n  \"title\": \"1984\",\n  \"author\": \"George Orwell\",\n  \"isbn\": \"9780451524935\"\n}"
                         },
                         "url": {
-                            "raw": "http://localhost:3002/books",
+                            "raw": "http://localhost:5000/api/books",
                             "protocol": "http",
                             "host": ["localhost"],
-                            "port": "3002",
-                            "path": ["books"]
+                            "port": "5000",
+                            "path": ["api", "books"]
                         }
                     }
                 },
@@ -108,11 +108,11 @@
                     "request": {
                         "method": "GET",
                         "url": {
-                            "raw": "http://localhost:3002/books",
+                            "raw": "http://localhost:5000/api/books",
                             "protocol": "http",
                             "host": ["localhost"],
-                            "port": "3002",
-                            "path": ["books"]
+                            "port": "5000",
+                            "path": ["api", "books"]
                         }
                     }
                 },
@@ -121,11 +121,11 @@
                     "request": {
                         "method": "GET",
                         "url": {
-                            "raw": "http://localhost:3002/books/{{book_id}}",
+                            "raw": "http://localhost:5000/api/books/{{book_id}}",
                             "protocol": "http",
                             "host": ["localhost"],
-                            "port": "3002",
-                            "path": ["books", "{{book_id}}"]
+                            "port": "5000",
+                            "path": ["api", "books", "{{book_id}}"]
                         }
                     }
                 },
@@ -139,11 +139,11 @@
                             "raw": "{\n  \"available\": false\n}"
                         },
                         "url": {
-                            "raw": "http://localhost:3002/books/{{book_id}}",
+                            "raw": "http://localhost:5000/api/books/{{book_id}}",
                             "protocol": "http",
                             "host": ["localhost"],
-                            "port": "3002",
-                            "path": ["books", "{{book_id}}"]
+                            "port": "5000",
+                            "path": ["api", "books", "{{book_id}}"]
                         }
                     }
                 },
@@ -152,11 +152,11 @@
                     "request": {
                         "method": "DELETE",
                         "url": {
-                            "raw": "http://localhost:3002/books/{{book_id}}",
+                            "raw": "http://localhost:5000/api/books/{{book_id}}",
                             "protocol": "http",
                             "host": ["localhost"],
-                            "port": "3002",
-                            "path": ["books", "{{book_id}}"]
+                            "port": "5000",
+                            "path": ["api", "books", "{{book_id}}"]
                         }
                     }
                 }
@@ -175,11 +175,11 @@
                             "raw": "{\n  \"userId\": \"{{user_id}}\",\n  \"bookId\": \"{{book_id}}\"\n}"
                         },
                         "url": {
-                            "raw": "http://localhost:3003/loans/borrow",
+                            "raw": "http://localhost:5000/api/loans/borrow",
                             "protocol": "http",
                             "host": ["localhost"],
-                            "port": "3003",
-                            "path": ["loans", "borrow"]
+                            "port": "5000",
+                            "path": ["api", "loans", "borrow"]
                         }
                     }
                 },
@@ -193,11 +193,11 @@
                             "raw": "{\n  \"userId\": \"{{user_id}}\",\n  \"bookId\": \"{{book_id}}\"\n}"
                         },
                         "url": {
-                            "raw": "http://localhost:3003/loans/return",
+                            "raw": "http://localhost:5000/api/loans/return",
                             "protocol": "http",
                             "host": ["localhost"],
-                            "port": "3003",
-                            "path": ["loans", "return"]
+                            "port": "5000",
+                            "path": ["api", "loans", "return"]
                         }
                     }
                 },
@@ -206,11 +206,11 @@
                     "request": {
                         "method": "GET",
                         "url": {
-                            "raw": "http://localhost:3003/loans/user/{{user_id}}",
+                            "raw": "http://localhost:5000/api/loans/user/{{user_id}}",
                             "protocol": "http",
                             "host": ["localhost"],
-                            "port": "3003",
-                            "path": ["loans", "user", "{{user_id}}"]
+                            "port": "5000",
+                            "path": ["api", "loans", "user", "{{user_id}}"]
                         }
                     }
                 }
@@ -229,11 +229,11 @@
                             "raw": "{\n  \"query\": \"{ books { id title author available } users { id username email } loans { id userId bookId penalty } userHistory(userId: \\\"{{user_id}}\\\") { id bookId borrowedAt returnedAt penalty } }\"\n}"
                         },
                         "url": {
-                            "raw": "http://localhost:4000/graphql",
+                            "raw": "http://localhost:5000/api/graphql",
                             "protocol": "http",
                             "host": ["localhost"],
-                            "port": "4000",
-                            "path": ["graphql"]
+                            "port": "5000",
+                            "path": ["api", "graphql"]
                         }
                     }
                 }
